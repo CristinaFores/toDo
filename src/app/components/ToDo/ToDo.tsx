@@ -13,8 +13,10 @@ const ToDo = ({ toDo: { id, name, done } }: ToDoProps): JSX.Element => {
   return (
     <ToDoStyled>
       <ul>
-        <li className="name" key={id}>
-          <p>TASK 1</p>
+        <li key={id}>
+          <p>
+            TASK 1{name} {done}
+          </p>
         </li>
       </ul>
       <ToDoButtonStyledDelete>DELETE</ToDoButtonStyledDelete>

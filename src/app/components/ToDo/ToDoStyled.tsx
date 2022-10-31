@@ -3,6 +3,7 @@ import { themeColors } from "../../styles/themesUtils";
 
 export const ToDoStyled = styled.section`
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   flex-direction: row;
   justify-content: center;
