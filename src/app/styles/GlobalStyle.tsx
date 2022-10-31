@@ -9,12 +9,13 @@ const GlobalStyle = createGlobalStyle`
   body {
     height: 100%;
     margin: 0;
+    background-color:#e4c5c2 ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  body {
-    font-family: "Roboto";
-  }
-  
+
   p,
   h1,
   h2,
@@ -24,6 +25,10 @@ const GlobalStyle = createGlobalStyle`
   h6 { 
   overflow-wrap: break-word;
   margin: 0;
+  }
+
+  ul, li {
+    list-style: none;
   }
 
 `;
