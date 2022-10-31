@@ -5,7 +5,7 @@ export const ToDoStyled = styled.section`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   font-size: 1rem;
   font-size: 1rem;
@@ -20,7 +20,7 @@ export const ToDoStyled = styled.section`
 
   ul {
     padding: 0px;
-    margin: 0 5rem;
+    text-align: center;
   }
 
   li {
@@ -28,9 +28,14 @@ export const ToDoStyled = styled.section`
   }
 `;
 
+export const ToDoButtonStyled = styled.div`
+  display: flex;
+`;
+
 export const ToDoButtonStyledDelete = styled.button`
   border: none;
   padding: 0.5rem;
+  margin: 10px;
   border-radius: 5px;
   background-color: ${themeColors.buttonDark};
   font-size: 1rem;
@@ -44,6 +49,7 @@ export const ToDoButtonStyledDelete = styled.button`
 export const ToDoButtonStyledModify = styled.button`
   border: none;
   padding: 0.5rem;
+  margin: 10px;
   border-radius: 5px;
   background-color: ${themeColors.buttonLight};
   font-size: 1rem;

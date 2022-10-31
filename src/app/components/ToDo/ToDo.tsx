@@ -1,5 +1,6 @@
 import { ToDoStructure } from "../../types/ToDoStructure";
 import {
+  ToDoButtonStyled,
   ToDoButtonStyledDelete,
   ToDoButtonStyledModify,
   ToDoStyled,
@@ -14,13 +15,13 @@ const ToDo = ({ toDo: { id, name, done } }: ToDoProps): JSX.Element => {
     <ToDoStyled>
       <ul>
         <li key={id}>
-          <p>
-            TASK 1{name} {done}
-          </p>
+          <p>{`${name}${done}`}</p>
         </li>
       </ul>
-      <ToDoButtonStyledDelete>DELETE</ToDoButtonStyledDelete>
-      <ToDoButtonStyledModify>MODIFY</ToDoButtonStyledModify>
+      <ToDoButtonStyled>
+        <ToDoButtonStyledDelete>DELETE</ToDoButtonStyledDelete>
+        <ToDoButtonStyledModify>MODIFY</ToDoButtonStyledModify>
+      </ToDoButtonStyled>
     </ToDoStyled>
   );
 };

@@ -1,9 +1,9 @@
-import ToDo from "./app/components/ToDo/ToDo";
+import ListToDo from "./app/components/ListToDo/ListToDo";
 
 const App = (): JSX.Element => {
   return (
     <div className="app">
-      <ToDo toDo={{ id: 1, name: "", done: true }} />
+      <ListToDo />
     </div>
   );
 };
