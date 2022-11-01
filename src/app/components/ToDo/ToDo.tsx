@@ -15,7 +15,8 @@ const ToDo = ({ toDo: { id, name, done } }: ToDoProps): JSX.Element => {
     <ToDoStyled>
       <ul>
         <li key={id}>
-          <p>{`${name}${done}`}</p>
+          <p>{`${name}`}</p>
+          <input type="checkbox" name="" id="" checked={done} />
         </li>
       </ul>
       <ToDoButtonStyled>
