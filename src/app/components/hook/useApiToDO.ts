@@ -10,7 +10,7 @@ import { ToDos, ToDoStructure } from "../../types/ToDoStructure";
 
 const useApiToDo = () => {
   const dispatch = useAppDispatch();
-  let url = process.env.RREACT_APP_API_URL_TODO_API;
+  let url = process.env.REACT_APP_API_URL_TODO_API;
 
   const loadAllTasks = useCallback(async () => {
     try {
