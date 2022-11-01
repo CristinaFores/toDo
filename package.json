@@ -49,5 +49,11 @@
   "devDependencies": {
     "@types/styled-components": "^5.1.26",
     "husky": "^8.0.0"
-  }
+  },
+  "collectCoverageFrom": [
+    "!./index.tsx",
+    "!./App.tsx",
+    "!./react-app-env.d.ts",
+    "!./src/app/styles/**"
+  ]
 }
