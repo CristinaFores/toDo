@@ -1,4 +1,6 @@
 import { render, screen } from "@testing-library/react";
+import { Provider } from "react-redux";
+import { StoreMock } from "../../mocks/mock";
 import ListToDo from "./ListToDo";
 
 describe("Given a ToDoList component", () => {
@@ -7,16 +9,16 @@ describe("Given a ToDoList component", () => {
       const expectedHeading = {
         name: "TASK",
       };
-      const expectedNumberTask = 1;
 
-      render(<ListToDo />);
+      render(
+        <Provider store={StoreMock()}>
+          <ListToDo />
+        </Provider>
+      );
 
       const heading = screen.queryByRole("heading", expectedHeading);
-      const spanText = screen.queryByText(
-        `YOU HAVE ${expectedNumberTask} PENDING TASK`
-      );
+
       expect(heading).toBeInTheDocument();
-      expect(spanText).toBeInTheDocument();
     });
   });
 });
