@@ -1,7 +1,7 @@
 import toDoDates from "../../data/toDoDate";
 import {
   loadToDosActionCreator,
-  removeToDoCreator,
+  removeToDoActionCreator,
   toDoReducer,
 } from "./toDoSlice.ts";
 
@@ -24,7 +24,7 @@ describe("Given the toDoSlice function loadToDos", () => {
   });
 
   describe("Given the toDoSlice function removeToDos", () => {
-    describe("When it receives a 'deleteTask' action with an id 2", () => {
+    describe("When it receives a 'delete' action with an id 2", () => {
       test("Then should return a new state of tasks 2", () => {
         const idToDelete = 2;
 
@@ -54,10 +54,15 @@ describe("Given the toDoSlice function loadToDos", () => {
 
         const newToDoState = toDoReducer(
           initialState,
-          removeToDoCreator(idToDelete)
+          removeToDoActionCreator(idToDelete)
         );
 
         expect(newToDoState).toEqual(expectedToDoState);
+      });
+    });
+    describe("Given the toDoSlice function addToDo", () => {
+      describe("When it receives a 'add' action with an id 2", () => {
+        test("Then should return a new state of tasks 2", () => {});
       });
     });
   });

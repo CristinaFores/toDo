@@ -1,5 +1,5 @@
 import { useAppDispatch } from "../../hooks";
-import { removeToDoCreator } from "../../redux/slices/toDoSlice.ts";
+import { removeToDoActionCreator } from "../../redux/slices/toDoSlice.ts";
 import { ToDoStructure } from "../../types/ToDoStructure";
 import {
   ToDoButtonStyled,
@@ -16,7 +16,7 @@ const ToDo = ({ toDo: { id, name, done } }: ToDoProps): JSX.Element => {
   const dispatch = useAppDispatch();
 
   const handleRemove = (id: number) => {
-    dispatch(removeToDoCreator(id));
+    dispatch(removeToDoActionCreator(id));
   };
 
   return (
@@ -27,10 +27,10 @@ const ToDo = ({ toDo: { id, name, done } }: ToDoProps): JSX.Element => {
         </li>
       </ul>
       <ToDoButtonStyled>
-        <ToDoButtonStyledDelete onClick={() => handleRemove(id)}>
+        <ToDoButtonStyledDelete autoFocus onClick={() => handleRemove(id)}>
           DELETE
         </ToDoButtonStyledDelete>
-        <ToDoButtonStyledModify>MODIFY</ToDoButtonStyledModify>
+        <ToDoButtonStyledModify autoFocus>MODIFY</ToDoButtonStyledModify>
       </ToDoButtonStyled>
     </ToDoStyled>
   );
