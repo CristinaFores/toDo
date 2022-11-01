@@ -1,23 +1,31 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import toDoDate from "../../data/toDoDate";
+import toDoDates from "../../data/toDoDate";
 import { ToDos } from "../../types/ToDoStructure";
-import { ToDoState } from "./types";
-
+interface ToDoState {
+  list: ToDos;
+}
 const initialState: ToDoState = {
-  list: toDoDate,
+  list: toDoDates,
 };
 
 const toDoSlice = createSlice({
   name: "tasks",
   initialState,
   reducers: {
-    loadToDos: (currentState, action: PayloadAction<ToDos>) => ({
+    loadToDos: (currentState, action: PayloadAction<ToDos>): ToDoState => ({
       ...currentState,
       list: [...currentState.list, ...action.payload],
+    }),
+    removeToDo: (currentState, action: PayloadAction<number>): ToDoState => ({
+      ...currentState,
+      list: currentState.list.filter((todo) => todo.id !== action.payload),
     }),
   },
 });
 
-export const { loadToDos: loadToDosActionCreator } = toDoSlice.actions;
+export const {
+  loadToDos: loadToDosActionCreator,
+  removeToDo: removeToDoCreator,
+} = toDoSlice.actions;
 
 export const toDoReducer = toDoSlice.reducer;

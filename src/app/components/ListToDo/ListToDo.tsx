@@ -14,7 +14,9 @@ const ListToDo = (): JSX.Element => {
         ))}
       </ul>
 
-      <span>YOU HAVE {numberTask} PENDING TASK</span>
+      <span aria-label="Number task pending">
+        YOU HAVE {numberTask} PENDING TASK
+      </span>
     </ListToDoStyled>
   );
 };

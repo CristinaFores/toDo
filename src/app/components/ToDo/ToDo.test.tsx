@@ -1,4 +1,6 @@
 import { render, screen } from "@testing-library/react";
+import { Provider } from "react-redux";
+import { StoreMock } from "../../mocks/mock";
 import ToDo from "./ToDo";
 
 describe("Given a ToDo component", () => {
@@ -10,7 +12,11 @@ describe("Given a ToDo component", () => {
         done: true,
       };
 
-      render(<ToDo toDo={task} />);
+      render(
+        <Provider store={StoreMock()}>
+          <ToDo toDo={task} />
+        </Provider>
+      );
       const list = screen.getByRole("list");
       const text = screen.getByRole("listitem");
       const buttonDelete = screen.getByRole("button", {

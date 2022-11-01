@@ -1,6 +1,6 @@
 import { ToDos } from "../types/ToDoStructure";
 
-const toDoDate: ToDos = [
+const toDoDates: ToDos = [
   {
     id: 1,
     name: "Cenar",
@@ -18,4 +18,4 @@ const toDoDate: ToDos = [
   },
 ];
 
-export default toDoDate;
+export default toDoDates;
