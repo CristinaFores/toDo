@@ -26,7 +26,7 @@ describe("Given the toDoSlice function loadToDos", () => {
   describe("Given the toDoSlice function removeToDos", () => {
     describe("When it receives a 'deleteTask' action with an id 2", () => {
       test("Then should return a new state of tasks 2", () => {
-        const idToDelete = 1;
+        const idToDelete = 2;
 
         const initialState = {
           list: [
