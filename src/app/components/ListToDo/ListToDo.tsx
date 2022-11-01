@@ -1,12 +1,18 @@
+import { useAppSelector } from "../../hooks";
 import ToDo from "../ToDo/ToDo";
 import { ListToDoStyled } from "./ListToDoStyled";
 
 const ListToDo = (): JSX.Element => {
-  const numberTask: number = 1;
+  const taskList = useAppSelector((state) => state.toDos.list);
+  const numberTask: number = 3;
   return (
     <ListToDoStyled>
       <h2>TASK</h2>
-      <ToDo toDo={{ id: 1, name: "CENAR ", done: true }} />
+      <ul>
+        {taskList.map((task) => (
+          <ToDo toDo={task} />
+        ))}
+      </ul>
 
       <span>YOU HAVE {numberTask} PENDING TASK</span>
     </ListToDoStyled>

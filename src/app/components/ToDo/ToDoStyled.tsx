@@ -19,8 +19,13 @@ export const ToDoStyled = styled.section`
   border-radius: 5px;
 
   ul {
-    padding: 0px;
+    padding: 0;
     text-align: center;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 50vw;
   }
 
   li {
