@@ -13,7 +13,7 @@ const toDoDate: ToDos = [
   },
   {
     id: 3,
-    name: " Tengo que acbar el challenge",
+    name: " Tengo que acabar el challenge",
     done: false,
   },
 ];
