@@ -23,34 +23,34 @@ const useApiToDo = () => {
   }, [dispatch, url]);
 
   const deleteTask = useCallback(
-    async (todo: ToDoStructure) => {
-      const response = await fetch(`${url}/${todo.id}`, {
+    async (toDoDates: ToDoStructure) => {
+      const response = await fetch(`${url}/${toDoDates.id}`, {
         method: "DELETE",
-        body: JSON.stringify(todo),
+        body: JSON.stringify(toDoDates),
         headers: {
           "Content-Type": "application/json",
         },
       });
 
       if (response.ok) {
-        dispatch(removeToDoActionCreator(todo.id));
+        dispatch(removeToDoActionCreator(toDoDates.id));
       }
     },
     [dispatch, url]
   );
 
   const addTask = useCallback(
-    async (todo: ToDoStructure) => {
+    async (toDoDates: ToDoStructure) => {
       const response = await fetch(url!, {
         method: "POST",
-        body: JSON.stringify(todo),
+        body: JSON.stringify(toDoDates),
         headers: {
           "Content-Type": "application/json",
         },
       });
 
       if (response.ok) {
-        dispatch(addToDoActionCreator([todo]));
+        dispatch(addToDoActionCreator([toDoDates]));
       }
     },
     [dispatch, url]
