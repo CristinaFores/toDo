@@ -1,5 +1,5 @@
-import { useAppDispatch, useAppSelector } from "../../hooks";
-import { addToDoActionCreator } from "../../redux/slices/toDoSlice.ts";
+import { useAppSelector } from "../../hooks";
+
 import { ToDoStructure } from "../../types/ToDoStructure";
 import ToDo from "../ToDo/ToDo";
 import {
@@ -9,9 +9,10 @@ import {
   ToDoListInputStyled,
 } from "./ListToDoStyled";
 import { useState } from "react";
+import useApiToDo from "../hook/useApiToDO";
 
 const ListToDo = (): JSX.Element => {
-  const dispatch = useAppDispatch();
+  const { addTask } = useApiToDo();
   const taskList = useAppSelector((state) => state.toDos.list);
   const [task, setTask] = useState("");
   const numberTask: number = 3;
@@ -24,7 +25,7 @@ const ListToDo = (): JSX.Element => {
 
   const handle = (event: React.SyntheticEvent) => {
     event.preventDefault();
-    dispatch(addToDoActionCreator([idAdd]));
+    addTask(idAdd);
     setTask("");
   };
 
