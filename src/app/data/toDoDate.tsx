@@ -2,7 +2,7 @@ import { ToDos } from "../types/ToDoStructure";
 
 const toDoDates: ToDos = [
   {
-    id: 4,
+    id: 1,
     name: "Cenar",
     done: false,
   },

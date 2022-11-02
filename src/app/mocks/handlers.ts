@@ -2,10 +2,10 @@ import { rest } from "msw";
 const url = process.env.REACT_APP_API_URL_TODO_API;
 
 export const handlers = [
-  rest.get(`${url}`, (req, res, ctx) => {
+  rest.get(`${url}`, (req, res, context) => {
     return res(
-      ctx.status(200),
-      ctx.json([
+      context.status(200),
+      context.json([
         {
           id: 4,
           name: "tinc son",
@@ -13,5 +13,13 @@ export const handlers = [
         },
       ])
     );
+  }),
+  rest.post(url!, async (request, response, context) => {
+    const receivedTask = await request.json();
+    return response(context.status(200), context.json(receivedTask));
+  }),
+
+  rest.delete(`${url}/:id`, (request, response, context) => {
+    return response(context.status(200));
   }),
 ];

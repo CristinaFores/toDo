@@ -13,13 +13,9 @@ const useApiToDo = () => {
   let url = process.env.REACT_APP_API_URL_TODO_API;
 
   const loadAllTasks = useCallback(async () => {
-    try {
-      const response = await fetch(url!);
-      const apiResponse: ToDos = await response.json();
-      dispatch(loadToDosActionCreator(apiResponse));
-    } catch (error: unknown) {
-      throw new Error(`There was an error: ${(error as Error).message}`);
-    }
+    const response = await fetch(url!);
+    const apiResponse: ToDos = await response.json();
+    dispatch(loadToDosActionCreator(apiResponse));
   }, [dispatch, url]);
 
   const deleteTask = useCallback(
