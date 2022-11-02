@@ -6,5 +6,10 @@ export const StoreMock = () => {
     reducer: {
       toDos: toDoReducer,
     },
+    preloadedState: {
+      toDos: {
+        list: [],
+      },
+    },
   });
 };

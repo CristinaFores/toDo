@@ -1,11 +1,10 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import toDoDates from "../../data/toDoDate";
 import { ToDos } from "../../types/ToDoStructure";
 interface ToDoState {
   list: ToDos;
 }
 const initialState: ToDoState = {
-  list: toDoDates,
+  list: [],
 };
 
 const toDoSlice = createSlice({
