@@ -23,17 +23,13 @@ const useApiToDo = () => {
   }, [dispatch, url]);
 
   const deleteTask = useCallback(
-    async (toDoDates: ToDoStructure) => {
-      const response = await fetch(`${url}/${toDoDates.id}`, {
+    async (idTask: number) => {
+      const response = await fetch(`${url}/${idTask}`, {
         method: "DELETE",
-        body: JSON.stringify(toDoDates),
-        headers: {
-          "Content-Type": "application/json",
-        },
       });
 
       if (response.ok) {
-        dispatch(removeToDoActionCreator(toDoDates.id));
+        dispatch(removeToDoActionCreator(idTask));
       }
     },
     [dispatch, url]
