@@ -1,5 +1,3 @@
-import { useAppDispatch } from "../../hooks";
-import { removeToDoActionCreator } from "../../redux/slices/toDoSlice.ts";
 import { ToDoStructure } from "../../types/ToDoStructure";
 import useApiToDo from "../hook/useApiToDO";
 import {

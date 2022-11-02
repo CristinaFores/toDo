@@ -1,5 +1,5 @@
-import { useAppDispatch, useAppSelector } from "../../hooks";
-import { addToDoActionCreator } from "../../redux/slices/toDoSlice.ts";
+import { useAppSelector } from "../../hooks";
+
 import { ToDoStructure } from "../../types/ToDoStructure";
 import ToDo from "../ToDo/ToDo";
 import {
