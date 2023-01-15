@@ -11,11 +11,6 @@ const toDoDates: ToDos = [
     name: "Dormir",
     done: false,
   },
-  {
-    id: 3,
-    name: " Tengo que acabar el challenge",
-    done: false,
-  },
 ];
 
 export default toDoDates;
