@@ -1,8 +1,9 @@
-import { useEffect } from "react";
-
 import ListToDo from "../ListToDo/ListToDo";
-import { useAppDispatch } from "../../redux/hooks";
+
+import Header from "../Header/Header";
 import useApiToDo from "../../hook/useApiToDO";
+import { useAppDispatch } from "../../redux/hooks";
+import { useEffect } from "react";
 
 const App = (): JSX.Element => {
   const { loadAllTasks } = useApiToDo();
@@ -13,7 +14,8 @@ const App = (): JSX.Element => {
   }, [loadAllTasks, dispatch]);
 
   return (
-    <div className="app">
+    <div>
+      <Header />
       <ListToDo />
     </div>
   );
