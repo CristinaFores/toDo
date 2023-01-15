@@ -38,3 +38,41 @@ describe("Given the useApiToDo custom hook", () => {
     });
   });
 });
+
+describe("when its method deleteTask is invoked", () => {
+  test("Then its should  call the dispatch", async () => {
+    const {
+      result: {
+        current: { deleteTask },
+      },
+    } = renderHook(() => useApiToDo(), {
+      wrapper: ProviderWrapper,
+    });
+
+    const dispatch = useAppDispatch();
+    await deleteTask(1);
+
+    expect(dispatch).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe("when its method addTask is invoked", () => {
+  test("Then its should  call the dispatch", async () => {
+    const {
+      result: {
+        current: { addTask },
+      },
+    } = renderHook(() => useApiToDo(), {
+      wrapper: ProviderWrapper,
+    });
+    const newTask = {
+      id: 1,
+      name: "Cenar",
+      done: false,
+    };
+    const dispatch = useAppDispatch();
+    await addTask(newTask);
+
+    expect(dispatch).toHaveBeenCalledTimes(1);
+  });
+});
