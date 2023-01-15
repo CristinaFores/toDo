@@ -4,32 +4,20 @@ import { themeColors } from "../../styles/themesUtils";
 export const ToDoStyled = styled.section`
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  font-size: 1rem;
   font-size: 1rem;
   font-weight: bold;
   margin: 2rem;
   gap: 10px;
-  border: solid 1px ${themeColors.letterDark};
   padding: 1rem;
-  width: fit-content;
-  background-color: ${themeColors.backgroundLight};
+  background-color: ${themeColors.letterLight};
   border-radius: 5px;
-
+  width: 300px;
+  align-items: center;
+  justify-content: space-between;
   ul {
-    padding: 0;
-    text-align: center;
     list-style: none;
     display: flex;
-    flex-direction: column;
     flex-wrap: wrap;
-    width: 50vw;
-  }
-
-  li {
-    justify-items: start;
   }
 `;
 
@@ -42,12 +30,10 @@ export const ToDoButtonStyledDelete = styled.button`
   padding: 0.5rem;
   margin: 10px;
   border-radius: 5px;
-  background-color: ${themeColors.buttonDark};
+  background-color: ${themeColors.header};
   font-size: 1rem;
-  font-size: 1rem;
-  font-weight: bold;
   :hover {
-    background-color: ${themeColors.buttonDarkHover};
+    background-color: ${themeColors.buttonLightHover};
   }
 `;
 
