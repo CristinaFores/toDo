@@ -1,7 +1,8 @@
 import { renderHook } from "@testing-library/react";
 import { Provider } from "react-redux";
-import { useAppDispatch } from "../../hooks";
-import { store } from "../../store";
+import { useAppDispatch } from "../redux/hooks";
+import { store } from "../redux/store";
+
 import useApiToDo from "./useApiToDO";
 
 jest.mock("../../hooks", () => {

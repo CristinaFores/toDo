@@ -1,4 +1,4 @@
-import { ToDos } from "../types/ToDoStructure";
+import { ToDos } from "../../types/ToDoStructure";
 
 const toDoDates: ToDos = [
   {
