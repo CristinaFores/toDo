@@ -15,7 +15,7 @@ const ListToDo = (): JSX.Element => {
   const { addTask } = useApiToDo();
   const taskList = useAppSelector((state) => state.toDos.list);
   const [task, setTask] = useState("");
-  const numberTask: number = 3;
+  const numberTask: number = taskList.length;
 
   const idAdd: ToDoStructure = {
     id: taskList.length + 1,
