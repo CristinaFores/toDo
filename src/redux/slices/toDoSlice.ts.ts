@@ -12,9 +12,9 @@ const toDoSlice = createSlice({
   name: "tasks",
   initialState,
   reducers: {
-    loadToDos: (currentState, action: PayloadAction<ToDos>): ToDoState => ({
+    loadToDos: (currentState, action: PayloadAction<ToDos>) => ({
       ...currentState,
-      list: [...currentState.list, ...action.payload],
+      list: [...action.payload],
     }),
     removeToDo: (currentState, action: PayloadAction<number>): ToDoState => ({
       ...currentState,

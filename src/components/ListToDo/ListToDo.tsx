@@ -1,6 +1,7 @@
 import { useAppSelector } from "../../redux/hooks";
 import ToDo from "../ToDo/ToDo";
 import {
+  ContainStyled,
   FormStyled,
   ListToDoStyled,
   ToDoButtonStyledRemove,
@@ -12,12 +13,12 @@ import { ToDoStructure } from "../../types/ToDoStructure";
 
 const ListToDo = (): JSX.Element => {
   const { addTask } = useApiToDo();
-  const taskList = useAppSelector((state) => state.toDos.list);
+  const { list } = useAppSelector((state) => state.toDos);
   const [task, setTask] = useState("");
-  const numberTask: number = taskList.length;
+  const numberTask: number = list.length;
 
   const idAdd: ToDoStructure = {
-    id: taskList.length + 1,
+    id: list.length + 1,
     name: task,
     done: false,
   };
@@ -29,31 +30,35 @@ const ListToDo = (): JSX.Element => {
   };
 
   return (
-    <ListToDoStyled>
-      <h2>TASK</h2>
-      <ul></ul>
-      <ul>
-        {taskList.map((task) => (
-          <ToDo toDo={task} />
-        ))}
-      </ul>
-      <FormStyled className="task-input" onSubmit={handle}>
-        <ToDoButtonStyledRemove type="submit">ADD TASK</ToDoButtonStyledRemove>
-        <ToDoListInputStyled
-          autoComplete="off"
-          autoFocus
-          type="text"
-          required
-          placeholder="Add new task"
-          onChange={(event) => setTask(event.target.value)}
-          value={task}
-        />
-      </FormStyled>
+    <>
+      <ContainStyled>
+        <FormStyled className="task-input" onSubmit={handle}>
+          <ToDoButtonStyledRemove type="submit">
+            ADD TASK
+          </ToDoButtonStyledRemove>
+          <ToDoListInputStyled
+            autoComplete="off"
+            autoFocus
+            type="text"
+            required
+            placeholder="Add new task"
+            onChange={(event) => setTask(event.target.value)}
+            value={task}
+          />
+        </FormStyled>
+      </ContainStyled>
+      <ListToDoStyled>
+        <span aria-label="Number task pending">
+          Pending Task ({numberTask})
+        </span>
 
-      <span aria-label="Number task pending">
-        YOU HAVE {numberTask} PENDING TASK
-      </span>
-    </ListToDoStyled>
+        <ul>
+          {list.map((task, index) => (
+            <ToDo toDo={task} key={index} />
+          ))}
+        </ul>
+      </ListToDoStyled>
+    </>
   );
 };
 

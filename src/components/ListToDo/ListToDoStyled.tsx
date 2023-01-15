@@ -5,10 +5,24 @@ export const ListToDoStyled = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid ${themeColors.letterDark};
-  width: fit-content;
+
   margin: 2rem;
   padding: 1rem;
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  span {
+    border-radius: 5px;
+    width: 300px;
+    background-color: ${themeColors.header};
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    color: ${themeColors.letterDark};
+  }
 `;
 
 export const ToDoButtonStyledRemove = styled.button`
@@ -26,10 +40,17 @@ export const ToDoButtonStyledRemove = styled.button`
 `;
 
 export const FormStyled = styled.form`
-  display: flex;
   gap: 0.5rem;
+  background-color: ${themeColors.header};
+  display: flex;
   flex-direction: column-reverse;
-  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  border-radius: 5px;
+  align-items: center;
+  padding: 20px;
+  width: 300px;
+  margin: 20px;
 `;
 
 export const ToDoListInputStyled = styled.input`
@@ -39,4 +60,9 @@ export const ToDoListInputStyled = styled.input`
   margin: 10px;
   padding: 10px;
   border-radius: 5px;
+`;
+
+export const ContainStyled = styled.div`
+  display: flex;
+  justify-content: center;
 `;

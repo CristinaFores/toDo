@@ -4,12 +4,14 @@ const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
   }
-
+html {
+  font-family: "Poppins", sans-serif;
+}
   html,
   body {
     height: 100%;
     margin: 0;
-    background-color:#e4c5c2 ;
+    background-color:#b791c8;
     display: flex;
     flex-direction: column;
     align-items: center;
