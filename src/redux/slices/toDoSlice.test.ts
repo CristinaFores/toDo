@@ -1,4 +1,4 @@
-import toDoDates from "../../data/toDoDate";
+import toDoDates from "../../app/data/toDoDate";
 import {
   loadToDosActionCreator,
   removeToDoActionCreator,
@@ -49,7 +49,9 @@ describe("Given the toDoSlice function loadToDos", () => {
         };
 
         const expectedToDoState = {
-          list: toDoDates.filter((todo) => todo.id !== idToDelete),
+          list: toDoDates.filter(
+            (todo: { id: number }) => todo.id !== idToDelete
+          ),
         };
 
         const newToDoState = toDoReducer(

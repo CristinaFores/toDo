@@ -1,6 +1,4 @@
-import { useAppSelector } from "../../hooks";
-
-import { ToDoStructure } from "../../types/ToDoStructure";
+import { useAppSelector } from "../../redux/hooks";
 import ToDo from "../ToDo/ToDo";
 import {
   FormStyled,
@@ -9,13 +7,14 @@ import {
   ToDoListInputStyled,
 } from "./ListToDoStyled";
 import { useState } from "react";
-import useApiToDo from "../hook/useApiToDO";
+import useApiToDo from "../../hook/useApiToDO";
+import { ToDoStructure } from "../../types/ToDoStructure";
 
 const ListToDo = (): JSX.Element => {
   const { addTask } = useApiToDo();
   const taskList = useAppSelector((state) => state.toDos.list);
   const [task, setTask] = useState("");
-  const numberTask: number = 3;
+  const numberTask: number = taskList.length;
 
   const idAdd: ToDoStructure = {
     id: taskList.length + 1,

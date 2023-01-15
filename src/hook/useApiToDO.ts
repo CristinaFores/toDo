@@ -1,12 +1,11 @@
 import { useCallback } from "react";
-
-import { useAppDispatch } from "../../hooks";
+import { useAppDispatch } from "../redux/hooks";
 import {
   addToDoActionCreator,
   loadToDosActionCreator,
   removeToDoActionCreator,
-} from "../../redux/slices/toDoSlice.ts";
-import { ToDos, ToDoStructure } from "../../types/ToDoStructure";
+} from "../redux/slices/toDoSlice.ts";
+import { ToDos, ToDoStructure } from "../types/ToDoStructure";
 
 const useApiToDo = () => {
   const dispatch = useAppDispatch();
