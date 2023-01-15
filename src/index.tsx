@@ -1,13 +1,11 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
-
 import reportWebVitals from "./reportWebVitals";
-import "./index.css";
 import GlobalStyle from "./styles/GlobalStyle";
 import { store } from "./redux/store";
 import App from "./components/App/App";
-
+import "@fontsource/poppins";
 const container = document.getElementById("root")!;
 const root = createRoot(container);
 
