@@ -6,12 +6,12 @@ export const ToDoStyled = styled.li`
   flex-wrap: wrap;
   font-size: 1rem;
   font-weight: bold;
-  margin: 2rem;
+
   gap: 10px;
   padding: 1rem;
   background-color: ${themeColors.letterLight};
   border-radius: 5px;
-  width: 300px;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
 `;
@@ -27,6 +27,7 @@ export const ToDoButtonStyledDelete = styled.button`
   border-radius: 5px;
   background-color: ${themeColors.header};
   font-size: 1rem;
+  font-weight: bold;
   :hover {
     background-color: ${themeColors.buttonLightHover};
   }

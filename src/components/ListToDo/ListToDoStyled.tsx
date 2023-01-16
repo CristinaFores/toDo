@@ -3,16 +3,14 @@ import { themeColors } from "../../styles/themesUtils";
 
 export const ListToDoStyled = styled.main`
   display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  margin: 2rem;
-  padding: 1rem;
-
+  overflow-wrap: break-word;
+  padding: 20px;
+  justify-content: center;
   ul {
     display: flex;
+    gap: 2rem;
+    width: 22rem;
     flex-wrap: wrap;
-    justify-content: center;
   }
   span {
     border-radius: 5px;
