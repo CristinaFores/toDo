@@ -16,12 +16,10 @@ const ToDo = ({ toDo: { id, name, done } }: ToDoProps): JSX.Element => {
   return (
     <ToDoStyled>
       <input type="checkbox" />
-
       <p>{`${name}`}</p>
-
       <ToDoButtonStyled>
         <ToDoButtonStyledDelete autoFocus onClick={() => deleteTask(id)}>
-          DELETE
+          Delete
         </ToDoButtonStyledDelete>
       </ToDoButtonStyled>
     </ToDoStyled>
