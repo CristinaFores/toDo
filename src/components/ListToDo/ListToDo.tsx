@@ -34,24 +34,23 @@ const ListToDo = (): JSX.Element => {
       <ContainStyled>
         <FormStyled className="task-input" onSubmit={handle}>
           <ToDoButtonStyledRemove type="submit">
-            ADD TASK
+            Add Task
           </ToDoButtonStyledRemove>
           <ToDoListInputStyled
             autoComplete="off"
             autoFocus
             type="text"
             required
-            placeholder="Add new task"
+            placeholder="Write a new task to add"
             onChange={(event) => setTask(event.target.value)}
             value={task}
           />
+          <span aria-label="Number task pending">
+            Pending Task ({numberTask})
+          </span>
         </FormStyled>
       </ContainStyled>
       <ListToDoStyled>
-        <span aria-label="Number task pending">
-          Pending Task ({numberTask})
-        </span>
-
         <ul>
           {list.map((task, index) => (
             <ToDo toDo={task} key={index} />
